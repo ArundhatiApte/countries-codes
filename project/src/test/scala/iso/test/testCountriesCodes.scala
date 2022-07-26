@@ -23,15 +23,19 @@ final class CountriesCodesTestSuite extends AnyFunSuite {
 
     def checkGettingEntryByString2CharCode(ce: CountryEntry, string2CharCode: String, numericCode: Char): Unit = {
       val entry = CountriesEntries.getEntryBy2CharCode(string2CharCode);
-      assert(entry == ce);
+      assertLinksAreEqual(entry, ce);
       val numCode = entry.getNumericCode();
       assert(numCode == numericCode);
       assert(numCode == ce.getNumericCode());
     }
 
+    def assertLinksAreEqual(a: AnyRef, b: AnyRef): Unit = {
+      assert(a.eq(b));
+    }
+
     def checkGettingEntryByNumericCode(ce: CountryEntry, string2CharCode: String, numericCode: Char): Unit = {
       val entry = CountriesEntries.getEntryByNumericCode(numericCode);
-      assert(entry.eq(ce));
+      assertLinksAreEqual(entry, ce);
       val charCode = entry.get2CharCode();
       assert(charCode == string2CharCode);
       assert(charCode == ce.get2CharCode());
