@@ -8,6 +8,7 @@
     - class CountriesEntries
         * static getEntryBy2CharCode(s2CharInUpperCase: String): CountryEntry
         * static getEntryByNumericCode(numericCode: char): CountryEntry
+        * статичные свойства-записи о странах
     - class CountryEntry
         * get2CharCode(): String
         * getNumericCode(): char
@@ -25,6 +26,15 @@
 ##### public static CountryEntry getEntryByNumericCode(char numericCode)
 
 Получает запись о стране по 16-и битному числовому коду, в случае отсутствия возвращает null.
+
+##### статичные свойства-записи о странах
+
+CountriesEntries содержит статичные поля, являющиеся экземплярами класса CountryEntry, названные 2-ух символьным
+кодом страны. Пример:
+
+```java
+CountriesEntries.IN == CountriesEntries.getEntryBy2CharCode("IN");
+```
 
 #### class CountryEntry
 

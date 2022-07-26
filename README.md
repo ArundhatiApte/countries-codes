@@ -9,6 +9,7 @@ License: MIT.
     - class CountriesEntries
         * static getEntryBy2CharCode(s2CharInUpperCase: String): CountryEntry
         * static getEntryByNumericCode(numericCode: char): CountryEntry
+        * static properties entries
     - class CountryEntry
         * get2CharCode(): String
         * getNumericCode(): char
@@ -26,6 +27,15 @@ Gets a record about the country by a 2-character code of capital letters, in cas
 ##### public static CountryEntry getEntryByNumericCode(char numericCode)
 
 Gets a record about the country by a 16-bit numeric code, returns null if missing.
+
+##### static properties entries
+
+CountriesEntries contains static fields which are instances of the CountryEntry class and named with 2 character
+country code. Example:
+
+```java
+CountriesEntries.IN == CountriesEntries.getEntryBy2CharCode("IN");
+```
 
 #### class CountryEntry
 
