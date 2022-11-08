@@ -6,17 +6,17 @@ License: MIT.
 ## API
 
 - package iso.countriesCodes
-    - class CountriesEntries
-        * static getEntryBy2CharCode(s2CharInUpperCase: String): CountryEntry
-        * static getEntryByNumericCode(numericCode: char): CountryEntry
+    - public class CountriesEntries
+        * public static CountryEntry getEntryBy2CharCode(String s2CharInUpperCase)
+        * public static CountryEntry getEntryByNumericCode(char numericCode)
         * static properties entries
-    - class CountryEntry
-        * get2CharCode(): String
-        * getNumericCode(): char
+    - public class CountryEntry
+        * public String get2CharCode()
+        * public char getNumericCode()
 
 ### package iso.countriesCodes
 
-#### class CountriesEntries
+#### public class CountriesEntries
 
 A class representing static methods for getting country records.
 
@@ -37,7 +37,7 @@ country code. Example:
 CountriesEntries.IN == CountriesEntries.getEntryBy2CharCode("IN");
 ```
 
-#### class CountryEntry
+#### public class CountryEntry
 
 Record about the country.
 
